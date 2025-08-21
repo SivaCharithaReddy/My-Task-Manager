@@ -1,0 +1,218 @@
+/* Cute handwritten font for headers */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #444;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle texture pattern */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: 0;
+}
+
+/* Container with soft shadow */
+.container {
+    width: 90%;
+    max-width: 750px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+}
+
+/* Fun header */
+header h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Pacifico', cursive;
+    font-size: 2.4rem;
+    color: #6c63ff;
+    letter-spacing: 1px;
+}
+
+/* Form styling */
+#task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#task-form input[type="text"],
+#task-form select {
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #f0f0f0;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#task-form input:focus,
+#task-form select:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+#task-category {
+    flex-grow: 1;
+}
+
+#color-tags {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* Add Task Button */
+#task-form button {
+    padding: 14px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#task-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Task list section */
+#task-list-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #6c63ff;
+    font-weight: 600;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Task card style */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Gradient border using pseudo-element */
+.task-item::before {
+    content: "";
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    z-index: -1;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+/* Hover effect */
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Completed task */
+.task-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+/* Task details layout */
+.task-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.task-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.task-category {
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    color: white;
+}
+
+.category-Work { background-color: #6c63ff; }
+.category-Study { background-color: #ffb347; }
+.category-Personal { background-color: #ff6f91; }
+
+/* Color tag */
+.task-tag {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.tag-red { background-color: #ff6f61; }
+.tag-green { background-color: #77dd77; }
+.tag-blue { background-color: #779ecb; }
+
+/* Delete button */
+.task-actions .delete-btn {
+    background: #ff6f61;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.task-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.task-actions .delete-btn:hover {
+    background: #e85b50;
+}
+
+/* Animation for adding tasks */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+} 
