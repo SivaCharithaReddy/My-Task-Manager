@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Task Manager</h1>
+        </header>
+        <main>
+            <form id="task-form">
+                <input type="text" id="task-title" placeholder="Enter task title" required>
+                <div class="form-row">
+                    <select id="task-category">
+                        <option value="Work">Work</option>
+                        <option value="Study">Study</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                    <div id="color-tags">
+                        <label><input type="radio" name="color" value="red" checked> Red</label>
+                        <label><input type="radio" name="color" value="green"> Green</label>
+                        <label><input type="radio" name="color" value="blue"> Blue</label>
+                    </div>
+                </div>
+                <button type="submit">Add Task</button>
+            </form>
+
+            <section id="task-list-container">
+                <h2>Tasks</h2>
+                <ul id="task-list"></ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
